@@ -31,5 +31,4 @@ public class Course {
         Course csc120 = new Course("OOP", "CSC120", "TR 10:50");
         System.out.println(csc120);
     }
-    
 }

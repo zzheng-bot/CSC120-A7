@@ -1,4 +1,4 @@
-interface HouseRequirements {
+interface HouseRequirements { 
     boolean hasDiningRoom(); 
     int nResidents(); 
     void moveIn(Student s);
