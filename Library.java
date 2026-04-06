@@ -3,19 +3,19 @@ import java.util.Hashtable;
 public class Library extends Building implements LibraryRequirements {
     private Hashtable<String, Boolean> collection;
 
-    /*Constructor*/
+    // Constructor
     public Library(String name, String address, int nFloors) {
         super(name, address, nFloors);
         collection = new Hashtable<String, Boolean>();
         System.out.println("You have built a library: 📖");
     }
 
-    /*Adds a title to the collection*/
+    // Adds a title to the collection
     public void addTitle(String title) {
         collection.put(title, true);
     }
 
-    /*Removes a title from the collection*/
+    // Removes a title
     public String removeTitle(String title) {
         if (collection.containsKey(title)) {
             collection.remove(title);
@@ -24,26 +24,22 @@ public class Library extends Building implements LibraryRequirements {
         return null;
     }
 
-    /*Checks out a book (sets availability to false)*/
     public void checkOut(String title) {
         if (collection.containsKey(title)) {
             collection.replace(title, false);
         }
     }
 
-    /*Returns a book (sets availability to true)*/
     public void returnBook(String title) {
         if (collection.containsKey(title)) {
             collection.replace(title, true);
         }
     }
 
-    /*Checks if the library contains a title*/
     public boolean containsTitle(String title) {
         return collection.containsKey(title);
     }
 
-    /*Checks if a title is available*/
     public boolean isAvailable(String title) {
         if (collection.containsKey(title)) {
             return collection.get(title);
@@ -51,7 +47,6 @@ public class Library extends Building implements LibraryRequirements {
         return false;
     }
 
-    /*Prints the entire collection*/
     public void printCollection() {
         for (String title : collection.keySet()) {
             String status = collection.get(title) ? "Available" : "Checked out";

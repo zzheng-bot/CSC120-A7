@@ -5,7 +5,7 @@ public class Cafe extends Building implements CafeRequirements {
     private int nCreams;
     private int nCups;
 
-    /*Constructor*/
+    //Constructor
     public Cafe(String name, String address, int nFloors, int coffee, int sugar, int cream, int cups) {
         super(name, address, nFloors);
         this.nCoffeeOunces = coffee;
@@ -16,10 +16,9 @@ public class Cafe extends Building implements CafeRequirements {
         System.out.println("You have built a cafe: ☕");
     }
 
-    /*Sells coffee and updates inventory*/
+    //Sells coffee and updates inventory
     public void sellCoffee(int size, int sugar, int cream) {
 
-        // If not enough inventory
         if (nCoffeeOunces < size || nSugarPackets < sugar || nCreams < cream || nCups < 1) {
             restock(100, 50, 50, 50);
         }
@@ -30,7 +29,6 @@ public class Cafe extends Building implements CafeRequirements {
         nCups -= 1;
     }
 
-    /*Restocks inventory (private method)*/
     private void restock(int coffee, int sugar, int cream, int cups) {
         nCoffeeOunces += coffee;
         nSugarPackets += sugar;
